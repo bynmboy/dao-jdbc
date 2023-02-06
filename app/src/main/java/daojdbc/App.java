@@ -3,12 +3,22 @@
  */
 package daojdbc;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
+import model.entities.Seller;
 
+/**
+ * 
+ * @author fabio
+ */
+
+public class App {
+    
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        
+        SellerDao sellerDao = DaoFactory.createSellerDao();
+        Seller seller = sellerDao.findById(3);
+        
+        System.out.println(seller);
     }
 }
