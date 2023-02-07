@@ -143,7 +143,9 @@ public class SellerDaoJDBC implements SellerDao {
                 Seller obj = instanciateSeller(rs, dep);
                 return obj;
             }
+            
             return null;
+            
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
         }
@@ -179,7 +181,9 @@ public class SellerDaoJDBC implements SellerDao {
                 Seller obj = instanciateSeller(rs, dep);
                 list.add(obj);
             }
+            
             return list;
+            
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
         }
